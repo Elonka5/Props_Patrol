@@ -1,3 +1,7 @@
+import { Route, Routes } from 'react-router-dom';
+
 export const App = () => {
-  return <h1>React homework template</h1>;
+  <Routes>
+    <Route path="/" element={<Header />} />
+  </Routes>;
 };
