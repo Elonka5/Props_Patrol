@@ -1,4 +1,4 @@
-import React from 'react';
+import { TansactionsForm } from 'components/TransactionForm/TransactionsForm';
 
 const Home = () => {
   return (
@@ -12,7 +12,9 @@ const Home = () => {
           <div>Sum</div>
         </div>
       </div>
+    <TansactionsForm />
     </section>
+          
   );
 };
 
