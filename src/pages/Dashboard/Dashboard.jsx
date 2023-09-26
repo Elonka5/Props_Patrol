@@ -8,7 +8,6 @@ const Dashboard = () => {
   return (
     <div>
       <main>
-        <h1> Hello World</h1>
         <Suspense fallback={null}>
           <Header />
           <Sidebar />

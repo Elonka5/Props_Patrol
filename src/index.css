@@ -1,5 +1,5 @@
 @import-normalize; /* bring in normalize.css styles */
-@import './css/stylesheet/vars.css';
+@import './css/stylesheet/root.css';
 @import './css/basic/container.css';
 
 body {
@@ -7,6 +7,8 @@ body {
   font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scrollbar-width: none;
+  line-height: 1.2;
 }
 
 code {
