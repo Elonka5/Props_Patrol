@@ -23,21 +23,3 @@ Button.propTypes = {
   variant: PropTypes.string,
 };
 
-// export const Button = ({
-//   onClick = null,
-//   text,
-//   type = 'button',
-//   variant = 'primary',
-// }) => {
-//   return (
-//     <button type={type} onClick={onClick} variant={variant}>
-//       {text}
-//     </button>
-//   );
-// };
-// Button.propTypes = {
-//   onClick: PropTypes.func,
-//   text: PropTypes.string.isRequired,
-//   type: PropTypes.string,
-//   variant: PropTypes.string,
-// };
