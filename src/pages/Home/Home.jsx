@@ -1,6 +1,7 @@
 import React from 'react';
 import style from './HomePage.module.css';
 import TransactionList from 'components/TransactionList/TransactionList';
+import { TansactionsForm } from 'components/TransactionForm/TransactionsForm';
 
 const Home = () => {
   return (
@@ -17,7 +18,8 @@ const Home = () => {
           <TransactionList />
         </div>
       </div>
-    </section>
+    <TansactionsForm />
+    </section>         
   );
 };
 
