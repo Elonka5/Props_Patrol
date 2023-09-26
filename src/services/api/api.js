@@ -26,6 +26,7 @@ export const addNewTransaction = async transaction => {
 // Get all transactions for logged in user
 export const getTransaction = async () => {
   const { data } = await instance.get('/transactions');
+  // console.log(data);
   return data;
 };
 
