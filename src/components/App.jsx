@@ -13,7 +13,7 @@ export const App = () => {
   return (
     <Routes>
       <Route
-        path="/login"
+        path="/"
         element={
           <PublicRoute redirectTo="/home">
             <Login />
@@ -21,16 +21,24 @@ export const App = () => {
         }
       />
       <Route
-        path="/register"
+        path="login"
+        element={
+          <PublicRoute redirectTo="/home">
+            <Login />
+          </PublicRoute>
+        }
+      />
+      <Route
+        path="register"
         element={
           <PublicRoute redirectTo="/home">
             <Registration />
           </PublicRoute>
         }
       />
-      <Route path="/" element={<Dashboard />}>
+      <Route path="home" element={<Dashboard />}>
         <Route
-          path="/home"
+          index
           element={
             <PrivateRoute>
               <Home />
@@ -38,7 +46,7 @@ export const App = () => {
           }
         />
         <Route
-          path="/statistics"
+          path="statistics"
           element={
             <PrivateRoute>
               <Statistics />
