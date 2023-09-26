@@ -18,8 +18,8 @@ const Home = () => {
           <TransactionList />
         </div>
       </div>
-    <TansactionsForm />
-    </section>         
+      <TansactionsForm />
+    </section>
   );
 };
 

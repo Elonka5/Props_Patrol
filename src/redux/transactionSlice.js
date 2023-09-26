@@ -10,7 +10,32 @@ import {
 } from './transactionsOperations';
 
 const initialState = {
-  transactions: [],
+  transactions: [
+    {
+      id: '1',
+      transactionDate: 'string',
+      type: 'INCOME',
+      categoryId: '14548',
+      comment: 'string',
+      amount: 0,
+    },
+    {
+      id: '2',
+      transactionDate: 'string',
+      type: 'INCOME',
+      categoryId: '25454',
+      comment: 'string',
+      amount: 0,
+    },
+    {
+      id: '3',
+      transactionDate: 'string',
+      type: 'INCOME',
+      categoryId: '37897',
+      comment: 'string',
+      amount: 0,
+    },
+  ],
   transactionsCategories: null,
   currencyRates: [],
   transactionSummary: [],
@@ -32,10 +57,10 @@ const handleRejected = state => {
   state.isError = true;
 };
 
-const handleFulfilledDelete = (state, { payload }) => {
+const handleFulfilledDelete = (state, payload) => {
   state.isLoading = false;
   state.transactions = state.transactions.filter(
-    transaction => transaction.id !== payload.id
+    transaction => transaction.id !== payload
   );
 };
 const handleFulfilledCategories = (state, { payload }) => {
