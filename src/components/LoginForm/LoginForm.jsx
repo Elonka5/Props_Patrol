@@ -93,7 +93,9 @@ export const LoginForm = () => {
             <FormError name="password" />
           </WrapperField>
           <WrapperButton>
-            <Button type="submit" text="log in" />
+            <Link to="/home">
+              <Button type="submit" text="log in" />
+            </Link>
             <Link to="/register">
               <Button text="register" variant="secondary" />
             </Link>

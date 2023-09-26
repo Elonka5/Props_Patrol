@@ -12,7 +12,7 @@ import {
 import storage from 'redux-persist/lib/storage';
 
 import { authReducer } from './auth/authSlice';
-// import { transactionsReducer } from './transactionSlice';
+import { transactionReducer } from './transactionSlice';
 // import { currencyReducer } from './currencySlice';
 import { globalReducer } from './Global/globalSlices';
 
@@ -27,7 +27,7 @@ const persistedReducer = persistReducer(persistConfig, authReducer);
 
 export const store = configureStore({
   reducer: {
-    // global: globalReducer,
+    global: globalReducer,
     auth: persistedReducer,
     // currency: currencyReducer,
     transaction: transactionReducer,
