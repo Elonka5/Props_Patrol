@@ -12,6 +12,7 @@ export const signUpThunk = createAsyncThunk(
   async (credentials, { rejectWithValue }) => {
     try {
       const data = await signUp(credentials);
+      console.log(data);
       return data;
     } catch (error) {
       return rejectWithValue(error.message);

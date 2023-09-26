@@ -1,32 +1,50 @@
-import React from 'react';
 import { useDispatch } from 'react-redux';
-import css from './RegisterForm.module.css';
-import { signUpThunk } from 'redux/authOperations';
-import { toast } from 'react-toastify';
-import { ErrorMessage, Formik, useFormikContext } from 'formik';
+import { Formik } from 'formik';
+
 import { registerSchema } from 'services/validation/validationRegisterSchema';
-import { TogglePasswordIcon } from 'components/TogglePasswordVisibility/TogglePasswordVisibility';
-import { IndicatorPasswordStrenght } from 'components/IndicatorPasswordStrenght/IndicatorPasswordStrenght';
-import { FormError } from 'components/FormError/FormError';
-import { ConfirmPasswordIndicator } from 'components/ConfirmPasswordIndicator/ConfirmPasswordIndicator';
-import { Button } from 'components/Button/Button';
-import { Link } from 'react-router-dom';
 import { usePasswordToggle } from 'hooks/usePasswordToggle';
 
-const RegisterForm = () => {
+import { Button } from 'components/Button/Button';
+import { FormError } from 'components/FormError/FormError';
+import { Logo } from 'components/Logo/Logo';
+import { IndicatorPasswordStrenght } from 'components/IndicatorPasswordStrenght/IndicatorPasswordStrenght';
+import { TogglePasswordIcon } from 'components/TogglePasswordVisibility/TogglePasswordVisibility';
+import { ConfirmPasswordIndicator } from 'components/ConfirmPasswordIndicator/ConfirmPasswordIndicator';
+
+import { LinkStyled, NameRegisterIcon } from './RegisterForm.styled';
+import {
+  EmailIcon,
+  FieldStyled,
+  FormStyled,
+  PasswordlIcon,
+  WrapperButton,
+  WrapperField,
+  WrapperForm,
+  WrapperIcon,
+  WrapperIcon2,
+  WrapperIcon3,
+} from 'components/LoginForm/LoginForm.styled';
+import { toast } from 'react-toastify';
+import { signUpThunk } from 'redux/authOperations';
+
+export const RegisterForm = () => {
   const { showPasswords, togglePasswordVisibility } = usePasswordToggle([
     'password1',
     'password2',
   ]);
 
   const dispatch = useDispatch();
+
   const initialValues = {
+    username: '',
     email: '',
     password: '',
+    confirmPassword: '',
   };
-  const handleSubmit = (values, { resetForm }) => {
-    const { email, password } = values;
-    dispatch(signUpThunk({ email, password }))
+
+  const handleSubmit = (value, { resetForm }) => {
+    const { username, email, password } = value;
+    dispatch(signUpThunk({ username, email, password }))
       .unwrap()
       .then(data => {
         resetForm();
@@ -39,61 +57,96 @@ const RegisterForm = () => {
       });
     resetForm();
   };
-  const formik = useFormikContext();
+
   return (
-    <div className={css.registerform}>
+    <WrapperForm>
+      <Logo />
       <Formik
         initialValues={initialValues}
-        registerSchema={registerSchema}
+        validationSchema={registerSchema}
         onSubmit={handleSubmit}
       >
-        <form autoComplete="off">
-          <div>
-            <div>
-              <input
-                type="text"
-                name="username"
-                autoComplete="off"
-                placeholder="First name"
-                required
-              />
-            </div>
-            <TogglePasswordIcon
-              showPassword={showPasswords.password1}
-              onToggle={() => togglePasswordVisibility('password1')}
-            />
-            <IndicatorPasswordStrenght password={formik.values.password} />
-            <ErrorMessage name="password" component={FormError} />
-            <div>
-              <div>
-                <input
-                  type={showPasswords.password2 ? 'text' : 'password'}
-                  name="confirmPassword"
-                  title="Enter the password more difficult, letter, digit, capital letter."
-                  placeholder="Confirm Password"
+        {({ values, handleChange, handleBlur, touched, errors }) => (
+          <FormStyled autoComplete="off">
+            <WrapperField>
+              <WrapperIcon>
+                <FieldStyled
+                  type="text"
+                  name="username"
+                  placeholder="First name"
                   autoComplete="off"
                   required
                 />
-              </div>
-              <TogglePasswordIcon
-                showPassword={showPasswords.password2}
-                onToggle={() => togglePasswordVisibility('password2')}
+                <NameRegisterIcon />
+              </WrapperIcon>
+              <FormError name="username" touched={touched} errors={errors} />
+              <WrapperIcon>
+                <FieldStyled
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  autoComplete="off"
+                  required
+                />
+                <EmailIcon />
+              </WrapperIcon>
+              <FormError name="email" touched={touched} errors={errors} />
+
+              <WrapperIcon3>
+                <WrapperIcon2>
+                  <FieldStyled
+                    type={showPasswords.password1 ? 'text' : 'password'}
+                    name="password"
+                    title="Enter the password more difficult, letter, digit, capital letter."
+                    placeholder="Password"
+                    required
+                    value={values.password}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    autoComplete="off"
+                  />
+                  <PasswordlIcon />
+                </WrapperIcon2>
+                <TogglePasswordIcon
+                  showPassword={showPasswords.password1}
+                  onToggle={() => togglePasswordVisibility('password1')}
+                />
+              </WrapperIcon3>
+              <IndicatorPasswordStrenght values={values} />
+              <FormError name="password" touched={touched} errors={errors} />
+              <WrapperIcon3>
+                <WrapperIcon2>
+                  <FieldStyled
+                    type={showPasswords.password2 ? 'text' : 'password'}
+                    name="confirmPassword"
+                    title="Enter the password more difficult, letter, digit, capital letter."
+                    placeholder="Confirm Password"
+                    autoComplete="off"
+                    required
+                  />
+                  <PasswordlIcon />
+                </WrapperIcon2>
+                <TogglePasswordIcon
+                  showPassword={showPasswords.password2}
+                  onToggle={() => togglePasswordVisibility('password2')}
+                />
+              </WrapperIcon3>
+              <ConfirmPasswordIndicator
+                values={values}
+                passwordsMatch={
+                  values.password === values.confirmPassword &&
+                  values.confirmPassword !== ''
+                }
               />
-            </div>
-            <ConfirmPasswordIndicator
-              password={formik.values.password}
-              confirmPassword={formik.values.confirmPassword}
-            />
-            <ErrorMessage name="confirmPassword" component={FormError} />
-          </div>
-          <div>
-            <Button type="submit" text="register" />
-            <Link to="/login">Log in</Link>
-          </div>
-        </form>
+              <FormError name="confirmPassword" />
+            </WrapperField>
+            <WrapperButton>
+              <Button type="submit" text="register" />
+              <LinkStyled to="/login">Log in</LinkStyled>
+            </WrapperButton>
+          </FormStyled>
+        )}
       </Formik>
-    </div>
+    </WrapperForm>
   );
 };
-
-export default RegisterForm;
