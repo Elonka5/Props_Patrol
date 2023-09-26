@@ -1,4 +1,4 @@
-import RegisterForm from 'components/RegisterForm/RegisterForm';
+import RegisterForm from '../../components/RegisterForm/RegisterForm';
 import css from './Registration.module.css';
 // import { Formik } from 'formik';
 

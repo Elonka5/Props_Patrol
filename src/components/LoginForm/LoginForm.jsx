@@ -5,11 +5,11 @@ import { useDispatch } from 'react-redux';
 import { ErrorMessage, Formik } from 'formik';
 import { toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
-import { Button } from 'components/Button/Button';
-import { logInThunk } from 'redux/authOperations';
-import { usePasswordToggle } from 'hooks/usePasswordToggle';
-import { FormError } from 'components/FormError/FormError';
-import { loginSchema } from 'services/validation/validationLoginSchema';
+import { Button } from '../Button/Button';
+import { logInThunk } from '../../redux/authOperations';
+import { usePasswordToggle } from '../../hooks/usePasswordToggle';
+import { FormError } from '../FormError/FormError';
+import { loginSchema } from '../../services/validation/validationLoginSchema';
 
 const LoginForm = () => {
   const { showPasswords, togglePasswordVisibility } = usePasswordToggle([

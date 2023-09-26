@@ -1,17 +1,17 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import css from './RegisterForm.module.css';
-import { signUpThunk } from 'redux/authOperations';
+import { signUpThunk } from '../../redux/authOperations';
 import { toast } from 'react-toastify';
 import { ErrorMessage, Formik, useFormikContext } from 'formik';
-import { registerSchema } from 'services/validation/validationRegisterSchema';
-import { TogglePasswordIcon } from 'components/TogglePasswordVisibility/TogglePasswordVisibility';
-import { IndicatorPasswordStrenght } from 'components/IndicatorPasswordStrenght/IndicatorPasswordStrenght';
-import { FormError } from 'components/FormError/FormError';
-import { ConfirmPasswordIndicator } from 'components/ConfirmPasswordIndicator/ConfirmPasswordIndicator';
-import { Button } from 'components/Button/Button';
+import { registerSchema } from '../../services/validation/validationRegisterSchema';
+import { TogglePasswordIcon } from '../TogglePasswordVisibility/TogglePasswordVisibility';
+import { IndicatorPasswordStrenght } from '../IndicatorPasswordStrenght/IndicatorPasswordStrenght';
+import { FormError } from '../FormError/FormError';
+import { ConfirmPasswordIndicator } from '../ConfirmPasswordIndicator/ConfirmPasswordIndicator';
+import { Button } from '../Button/Button';
 import { Link } from 'react-router-dom';
-import { usePasswordToggle } from 'hooks/usePasswordToggle';
+import { usePasswordToggle } from '../../hooks/usePasswordToggle';
 
 const RegisterForm = () => {
   const { showPasswords, togglePasswordVisibility } = usePasswordToggle([

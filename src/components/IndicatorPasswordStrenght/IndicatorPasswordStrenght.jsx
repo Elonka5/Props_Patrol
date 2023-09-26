@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { usePasswordStrength } from 'hooks/usePasswordStrength';
+import { usePasswordStrength } from '../../hooks/usePasswordStrength';
 import {
   PasswordStrengthIndicator,
   PasswordStrengthText,

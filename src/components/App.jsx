@@ -1,6 +1,6 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
-import PublicRoute from 'routes/PublicRoute';
-import PrivateRoute from 'routes/PrivateRoute';
+import PublicRoute from '../routes/PublicRoute';
+import PrivateRoute from '../routes/PrivateRoute';
 import { lazy } from 'react';
 
 const Home = lazy(() => import('../pages/Home/Home'));
