@@ -16,6 +16,7 @@ const initialState = {
   error: null,
   isLoggedIn: false,
   isRefreshing: false,
+  isModal: false,
 };
 
 const rejectedStatus = (state, action) => {
