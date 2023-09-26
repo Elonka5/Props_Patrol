@@ -1,0 +1,10 @@
+.transaction_item{
+   display: flex;
+   padding: 16px 16px 16px 20px;
+   color: var(--white, #FBFBFB);
+   font-family: Poppins;
+   font-size: 14px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: normal;
+}

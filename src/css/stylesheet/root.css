@@ -15,7 +15,7 @@
   );
   --white-btn: #fcfcfc;
   --text-btn: #623f8b;
-  --header-color: linear-gradient(276deg, #2e1746 3.19%, #2e225f 100%);
+  --header-color: linear-gradient(270deg, #2e1746 3.2%, #2e225f 99.98%);
   --currency-background-color: rgba(255, 255, 255, 0.2);
   --select-background-color: rgba(74, 86, 226, 0.1);
   --balance-background-color: rgba(82, 59, 126, 0.6);
