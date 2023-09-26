@@ -1,19 +1,18 @@
-import Header from 'components/Header/Header';
-import Sidebar from 'components/Sidebar/Sidebar';
+// import { Balance } from 'components/Balance/Balance';
+// import ButtonAddTransactions from 'components/ButtonAddTransactions/ButtonAddTransactions';
+import HomeTab from 'components/HomeTab/HomeTab';
 import React from 'react';
-import { Suspense } from 'react';
-import { Outlet } from 'react-router-dom';
+import { useMediaQuery } from 'react-responsive';
+import css from './Dashboard.module.css';
 
 const Dashboard = () => {
+  const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
   return (
-    <div>
-      <main>
-        <Suspense fallback={null}>
-          <Header />
-          <Sidebar />
-          <Outlet />
-        </Suspense>
-      </main>
+    <div className={css.homeWrapper}>
+      {/* {isMobile && <Balance />} */}
+
+      <HomeTab />
+      {/* <ButtonAddTransactions /> */}
     </div>
   );
 };
