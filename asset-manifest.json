@@ -1,11 +1,11 @@
 {
   "files": {
     "main.css": "/Props_Patrol/static/css/main.9193a10f.css",
-    "main.js": "/Props_Patrol/static/js/main.2cc1808f.js",
-    "static/css/676.d5889fb0.chunk.css": "/Props_Patrol/static/css/676.d5889fb0.chunk.css",
-    "static/js/676.e7e79466.chunk.js": "/Props_Patrol/static/js/676.e7e79466.chunk.js",
-    "static/css/258.8e77a1a6.chunk.css": "/Props_Patrol/static/css/258.8e77a1a6.chunk.css",
-    "static/js/258.46d1e949.chunk.js": "/Props_Patrol/static/js/258.46d1e949.chunk.js",
+    "main.js": "/Props_Patrol/static/js/main.780e80d1.js",
+    "static/css/263.015aed35.chunk.css": "/Props_Patrol/static/css/263.015aed35.chunk.css",
+    "static/js/263.29b71595.chunk.js": "/Props_Patrol/static/js/263.29b71595.chunk.js",
+    "static/css/258.3e3115d4.chunk.css": "/Props_Patrol/static/css/258.3e3115d4.chunk.css",
+    "static/js/258.d878b163.chunk.js": "/Props_Patrol/static/js/258.d878b163.chunk.js",
     "static/css/155.713f9809.chunk.css": "/Props_Patrol/static/css/155.713f9809.chunk.css",
     "static/js/155.12db3cd6.chunk.js": "/Props_Patrol/static/js/155.12db3cd6.chunk.js",
     "static/css/192.713f9809.chunk.css": "/Props_Patrol/static/css/192.713f9809.chunk.css",
@@ -20,11 +20,11 @@
     "index.html": "/Props_Patrol/index.html",
     "static/media/moneyGuardLogo.svg": "/Props_Patrol/static/media/moneyGuardLogo.dbc52635efdf8219ee1a2f3c5f17f1d2.svg",
     "main.9193a10f.css.map": "/Props_Patrol/static/css/main.9193a10f.css.map",
-    "main.2cc1808f.js.map": "/Props_Patrol/static/js/main.2cc1808f.js.map",
-    "676.d5889fb0.chunk.css.map": "/Props_Patrol/static/css/676.d5889fb0.chunk.css.map",
-    "676.e7e79466.chunk.js.map": "/Props_Patrol/static/js/676.e7e79466.chunk.js.map",
-    "258.8e77a1a6.chunk.css.map": "/Props_Patrol/static/css/258.8e77a1a6.chunk.css.map",
-    "258.46d1e949.chunk.js.map": "/Props_Patrol/static/js/258.46d1e949.chunk.js.map",
+    "main.780e80d1.js.map": "/Props_Patrol/static/js/main.780e80d1.js.map",
+    "263.015aed35.chunk.css.map": "/Props_Patrol/static/css/263.015aed35.chunk.css.map",
+    "263.29b71595.chunk.js.map": "/Props_Patrol/static/js/263.29b71595.chunk.js.map",
+    "258.3e3115d4.chunk.css.map": "/Props_Patrol/static/css/258.3e3115d4.chunk.css.map",
+    "258.d878b163.chunk.js.map": "/Props_Patrol/static/js/258.d878b163.chunk.js.map",
     "155.713f9809.chunk.css.map": "/Props_Patrol/static/css/155.713f9809.chunk.css.map",
     "155.12db3cd6.chunk.js.map": "/Props_Patrol/static/js/155.12db3cd6.chunk.js.map",
     "192.713f9809.chunk.css.map": "/Props_Patrol/static/css/192.713f9809.chunk.css.map",
@@ -36,6 +36,6 @@
   },
   "entrypoints": [
     "static/css/main.9193a10f.css",
-    "static/js/main.2cc1808f.js"
+    "static/js/main.780e80d1.js"
   ]
 }
