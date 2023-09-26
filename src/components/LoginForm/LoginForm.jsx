@@ -1,29 +1,44 @@
-import React from 'react';
-import css from './LoginForm.module.css';
-
-import { useDispatch } from 'react-redux';
-import { ErrorMessage, Formik } from 'formik';
-import { toast } from 'react-toastify';
+import { Formik } from 'formik';
 import { Link } from 'react-router-dom';
-import { Button } from 'components/Button/Button';
-import { logInThunk } from 'redux/authOperations';
-import { usePasswordToggle } from 'hooks/usePasswordToggle';
-import { FormError } from 'components/FormError/FormError';
-import { loginSchema } from 'services/validation/validationLoginSchema';
+import { useDispatch } from 'react-redux';
+import { toast } from 'react-toastify';
 
-const LoginForm = () => {
+import { loginSchema } from 'services/validation/validationLoginSchema';
+import { usePasswordToggle } from 'hooks/usePasswordToggle';
+
+import { Button } from 'components/Button/Button';
+import { Logo } from 'components/Logo/Logo';
+import { FormError } from 'components/FormError/FormError';
+import { TogglePasswordIcon } from 'components/TogglePasswordVisibility/TogglePasswordVisibility';
+
+import {
+  EmailIcon,
+  FieldStyled,
+  FormStyled,
+  PasswordlIcon,
+  WrapperButton,
+  WrapperField,
+  WrapperForm,
+  WrapperIcon,
+  WrapperIcon2,
+  WrapperIcon3,
+} from './LoginForm.styled';
+import { logInThunk } from 'redux/authOperations';
+
+export const LoginForm = () => {
   const { showPasswords, togglePasswordVisibility } = usePasswordToggle([
     'password1',
     'password2',
   ]);
   const dispatch = useDispatch();
+
   const initialValues = {
     email: '',
     password: '',
   };
 
-  const handleSubmit = (values, { resetForm }) => {
-    dispatch(logInThunk(values))
+  const handleSubmit = (value, { resetForm }) => {
+    dispatch(logInThunk(value))
       .unwrap()
       .then(data => {
         resetForm();
@@ -37,28 +52,30 @@ const LoginForm = () => {
   };
 
   return (
-    <div className={css.loginform}>
+    <WrapperForm>
+      <Logo />
       <Formik
         initialValues={initialValues}
         validationSchema={loginSchema}
         onSubmit={handleSubmit}
       >
-        <form>
-          <div>
-            <div div className={css.wrappericon}>
-              <input
+        <FormStyled>
+          <WrapperField>
+            <WrapperIcon>
+              <FieldStyled
                 type="email"
                 name="email"
-                title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer"
+                title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
                 placeholder="E-mail"
                 autoComplete="off"
                 required
               />
-            </div>
-            <ErrorMessage name="email" component={FormError} />
-            <div className={css.wrappericon3}>
-              <div className={css.wrappericon2}>
-                <input
+              <EmailIcon />
+            </WrapperIcon>
+            <FormError name="email" />
+            <WrapperIcon3>
+              <WrapperIcon2>
+                <FieldStyled
                   type={showPasswords.password1 ? 'text' : 'password'}
                   name="password"
                   title="Enter the password more difficult, letter, digit, capital letter."
@@ -66,23 +83,23 @@ const LoginForm = () => {
                   autoComplete="off"
                   required
                 />
-              </div>
-              <togglePasswordIcon
+                <PasswordlIcon />
+              </WrapperIcon2>
+              <TogglePasswordIcon
                 showPassword={showPasswords.password1}
                 onToggle={() => togglePasswordVisibility('password1')}
               />
-            </div>
-            <ErrorMessage name="password" component={FormError} />
-          </div>
-          <Button type="submit" text="log in">
-            <Link to="/registration">
-              <Button text="registration" variant="secondary" />
+            </WrapperIcon3>
+            <FormError name="password" />
+          </WrapperField>
+          <WrapperButton>
+            <Button type="submit" text="log in" />
+            <Link to="/register">
+              <Button text="register" variant="secondary" />
             </Link>
-          </Button>
-        </form>
+          </WrapperButton>
+        </FormStyled>
       </Formik>
-    </div>
+    </WrapperForm>
   );
 };
-
-export default LoginForm;

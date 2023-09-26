@@ -1,12 +1,11 @@
-import React from 'react';
-import LoginForm from 'components/LoginForm/LoginForm';
-import css from './Login.module.css';
+import { LoginForm } from 'components/LoginForm/LoginForm';
+import { BgImage } from './Login.styled';
 
 const Login = () => {
   return (
-    <div className={css.logincontainer}>
+    <BgImage>
       <LoginForm />
-    </div>
+    </BgImage>
   );
 };
 

@@ -4,7 +4,7 @@ import {
   logInThunk,
   logOutThunk,
   signUpThunk,
-} from '../authOperations';
+} from 'redux/authOperations';
 
 const initialState = {
   user: {

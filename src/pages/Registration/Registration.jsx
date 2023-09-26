@@ -1,12 +1,11 @@
-import RegisterForm from 'components/RegisterForm/RegisterForm';
-import css from './Registration.module.css';
-// import { Formik } from 'formik';
+import { RegisterForm } from 'components/RegisterForm/RegisterForm';
+import { RegisterPageWrapper } from './Registration.styled';
 
 const Registration = () => {
   return (
-    <div className={css.registercontaner}>
+    <RegisterPageWrapper>
       <RegisterForm />
-    </div>
+    </RegisterPageWrapper>
   );
 };
 

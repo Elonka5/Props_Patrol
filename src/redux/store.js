@@ -10,10 +10,11 @@ import {
   REGISTER,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import { authReducer } from '../redux/auth/authSlice';
-import { transactionReducer } from '../redux/transactionSlice';
-// import { globalReducer } from './globalSlice';
+
+import { authReducer } from './auth/authSlice';
+// import { transactionsReducer } from './transactionSlice';
 // import { currencyReducer } from './currencySlice';
+import { globalReducer } from './Global/globalSlices';
 
 const persistConfig = {
   key: 'token',
