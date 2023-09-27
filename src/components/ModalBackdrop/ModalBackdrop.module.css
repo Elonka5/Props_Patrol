@@ -7,17 +7,18 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--bakcdrop);
+  background: var(--backdrop);
   transition: opacity 500ms ease-in-out, visibility 500ms ease-in-out;
   opacity: 1;
   visibility: visible;
   padding: 0px;
+  backdrop-filter: blur(3.5px);
 }
 
 .modal {
   min-height: 511px;
-  width: 540px;
-  padding: 40px 74px;
+  width: 394px;
+  padding: 40px 73px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,8 +33,8 @@
   position: absolute;
   top: 20px;
   right: 20px;
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   border: none;
   background: none;
   margin: 0;
@@ -47,13 +48,22 @@
   border: none;
 }
 
+.cross_btn {
+  width: 25px;
+  height: 25px;
+  stroke: var(--white);
+  fill: var(--white);
+}
+
 @media only screen and (max-width: 767.9px) {
   .modal {
-    width: 100%;
+    max-width: 540px;
+    /* width: 100%; */
     height: 100%;
     border-radius: 0px;
     padding: calc(20 * (100vw / 480));
     min-width: 300px;
+    padding: 32px 20px;
   }
 
   .close_btn {
