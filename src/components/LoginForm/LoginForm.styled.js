@@ -68,6 +68,7 @@ export const WrapperButton = styled.div`
   align-items: center;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(5)};
+  margin-bottom: 20px;
 `;
 
 export const EmailIcon = styled(IoMdMail)`

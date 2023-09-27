@@ -53,7 +53,7 @@ export const RegisterForm = () => {
         );
       })
       .catch(error => {
-        toast.error(error.message);
+        toast.error(error);
       });
     resetForm();
   };
@@ -142,11 +142,11 @@ export const RegisterForm = () => {
             </WrapperField>
             <WrapperButton>
               <Button type="submit" text="register" />
-              <LinkStyled to="/login">Log in</LinkStyled>
             </WrapperButton>
           </FormStyled>
         )}
       </Formik>
+      <LinkStyled to="/login">Log in</LinkStyled>
     </WrapperForm>
   );
 };

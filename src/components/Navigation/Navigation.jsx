@@ -1,39 +1,32 @@
-import { NavLink } from 'react-router-dom';
-import Icons from '../../images/sprite.svg';
-import s from './Navigation.module.css';
-import { useMediaQuery } from 'react-responsive';
-
-const routes = [
-  { path: '/home', text: 'Home', icon: '#icon-home' },
-  { path: '/statistic', text: 'Statistics', icon: '#icon-diagram' },
-];
+import React from 'react';
+import { NavLink } from 'react-router-dom/dist';
+import css from './Navigation.module.css';
+import { IconHome } from 'components/Icons/IconHome';
+import { StatisticsIcon } from 'components/Icons/StatisticsIcon';
+import { IconCurrency } from 'components/Icons/IconCurrency';
 
 export const Navigation = () => {
-  const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
-
   return (
-    <>
-      <ul className={s.nav}>
-        {routes.map(route => (
-          <li key={route.path}>
-            <NavLink to={route.path} className={s.navLink}>
-              <svg width="44" height="44">
-                <use href={Icons + route.icon}></use>
-              </svg>
-              <p>{route.text}</p>
-            </NavLink>
-          </li>
-        ))}
-        {isMobile && (
-          <li>
-            <NavLink to="/currency" className={s.navLink}>
-              <svg width="44" height="44">
-                <use href={Icons + '#icon-dollar-2'}></use>
-              </svg>
-            </NavLink>
-          </li>
-        )}
+    <nav className={css.nav}>
+      <ul className={css.navList}>
+        <li className={css.navItem}>
+          <NavLink to="/home" className={css.navLink}>
+            <IconHome className={css.navIcon} />
+            <span className={css.navText}>Home</span>
+          </NavLink>
+        </li>
+        <li className={css.navItem}>
+          <NavLink to="/statistics" className={css.navLink}>
+            <StatisticsIcon className={css.navIcon} />
+            <span className={css.navText}>Statistics</span>
+          </NavLink>
+        </li>
+        <li className={css.hiddenItem}>
+          <NavLink to="/currency" className={css.navLink}>
+            <IconCurrency className={css.navIcon} />
+          </NavLink>
+        </li>
       </ul>
-    </>
+    </nav>
   );
 };
