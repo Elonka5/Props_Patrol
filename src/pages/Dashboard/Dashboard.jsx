@@ -16,7 +16,6 @@ const Dashboard = () => {
           <Navigation />
           <Balance />
           <Currency />
-          <Home />
           <Outlet />
         </Suspense>
       </main>
