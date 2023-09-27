@@ -1,12 +1,18 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { closeModalEditTransaction } from 'redux/Global/globalSlices';
 
 export default function useToggleModal() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const openModal = () => setIsOpen(true);
+  const dispatch = useDispatch();
+
+  const openModal = () => {
+    setIsOpen(true);
+  };
 
   const closeModal = (path = '/') => {
-    setIsOpen(false);
+    dispatch(closeModalEditTransaction());
   };
   const toggleModal = () => setIsOpen(isOpen => !isOpen);
 

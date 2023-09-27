@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import style from './TransactionsList.module.css';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import ModalDelete from 'components/modalDelete/ModalDelete';
+import { openModalEditTransaction } from 'redux/Global/globalSlices';
+import ModalWindow from 'components/ModalWindow/ModalWindow';
+import { selectBtnName, selectIsOpen } from 'redux/Global/globalSelectors';
+import { setBtnEdit } from '../../redux/Global/globalSlices';
 
 const TransactionList = () => {
   const [isModalDeleteOpen, setIsModalDeleteOpen] = useState(false);
@@ -9,16 +13,24 @@ const TransactionList = () => {
 
   const transactions = useSelector(state => state.transaction.transactions);
 
+  const isOpen = useSelector(selectIsOpen);
+
+  const dispatch = useDispatch();
+
+  const btnName = useSelector(selectBtnName);
+
   const handleClickModalDelete = id => {
     setCurrentId(id);
     setIsModalDeleteOpen(true);
   };
 
-  console.log(currentId);
-
   const handleModalClose = () => {
     setCurrentId('');
     setIsModalDeleteOpen(false);
+  };
+
+  const handleClickModalEdit = transaction => {
+    dispatch(openModalEditTransaction());
   };
   return (
     <>
@@ -32,11 +44,21 @@ const TransactionList = () => {
               <div className={style.comment}>{transaction.comment}</div>
               <div className={style.sum}>777.00</div>
               <div className={style.btns_wrapper}>
-                <button type="button" className={style.edit_btn}>
+                <button
+                  onClick={() => {
+                    handleClickModalEdit(transaction);
+                    dispatch(setBtnEdit());
+                  }}
+                  type="button"
+                  className={style.edit_btn}
+                  name="edit"
+                >
                   edit
                 </button>
                 <button
-                  onClick={() => handleClickModalDelete(transaction.id)}
+                  onClick={e => {
+                    handleClickModalDelete(transaction.id);
+                  }}
                   type="button"
                   className={style.delete_btn}
                 >
@@ -54,6 +76,7 @@ const TransactionList = () => {
           handleModalClose={handleModalClose}
         />
       )}
+      {isOpen && <ModalWindow btnName={btnName} />}
     </>
   );
 };

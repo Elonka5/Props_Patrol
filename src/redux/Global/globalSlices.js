@@ -4,11 +4,10 @@ const initialState = {
   isModalAddTransactionOpen: false,
   isModalLogoutOpen: false,
   isLoading: false,
-  isModalEditTransactionOpen: false,
+  isOpen: false,
   editTransaction: null,
   isModalDeleteTransactionOpen: false,
-  isModalAddOpen: false,
-  isModalEditOpen: false,
+  btnName: '',
 };
 
 const globalSlice = createSlice({
@@ -34,10 +33,16 @@ const globalSlice = createSlice({
       state.isLoading = false;
     },
     openModalEditTransaction(state) {
-      state.isModalEditTransactionOpen = true;
+      state.isOpen = true;
     },
     closeModalEditTransaction(state) {
-      state.isModalEditTransactionOpen = false;
+      state.isOpen = false;
+    },
+    setBtnAdd(state) {
+      state.btnName = 'add';
+    },
+    setBtnEdit(state) {
+      state.btnName = 'edit';
     },
     setUpdatedTransaction: (state, { payload }) => {
       state.editTransaction = payload;
@@ -64,4 +69,6 @@ export const {
   setUpdatedTransaction,
   openModalDeleteTransaction,
   closeModalDeleteTransaction,
+  setBtnAdd,
+  setBtnEdit,
 } = globalSlice.actions;
