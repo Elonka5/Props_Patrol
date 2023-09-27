@@ -1,16 +1,21 @@
 import Header from 'components/Header/Header';
+import Currency from 'pages/Currency/Currency';
 import Home from 'pages/Home/Home';
+import { Navigation } from '../../components/Navigation/Navigation';
+import Balance from 'components/Balance/Balance';
 import React, { Suspense } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
+import css from './Dashboard.module.css';
 
 const Dashboard = () => {
   return (
-    <div>
+    <div className={css.background}>
       <main>
         <Suspense fallback={null}>
           <Header />
-          <NavLink to="/home">Home</NavLink>
-          <NavLink to="/statistics">Statistics</NavLink>
+          <Navigation />
+          <Balance />
+          <Currency />
           <Home />
           <Outlet />
         </Suspense>
