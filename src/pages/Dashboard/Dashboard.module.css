@@ -2,6 +2,10 @@
   position: relative;
 }
 
+.background {
+  background: linear-gradient(207deg, #341fa0 46.11%, #652392 63.65%);
+}
+
 @media only screen and (min-width: 320px) {
   .homeWrapper {
     margin: auto;
