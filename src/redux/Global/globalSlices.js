@@ -7,6 +7,8 @@ const initialState = {
   isModalEditTransactionOpen: false,
   editTransaction: null,
   isModalDeleteTransactionOpen: false,
+  isModalAddOpen: false,
+  isModalEditOpen: false,
 };
 
 const globalSlice = createSlice({
