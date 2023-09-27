@@ -20,7 +20,6 @@ export const App = () => {
   const dispatch = useDispatch();
 
   const isMobilesize = useMediaQuery({ query: '(max-width:767px)' });
-  console.log(isMobilesize);
   useEffect(() => {
     dispatch(fetchCurrentUserThunk());
   }, [dispatch]);
