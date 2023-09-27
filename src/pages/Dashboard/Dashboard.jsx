@@ -1,5 +1,4 @@
 import Header from 'components/Header/Header';
-import Home from 'pages/Home/Home';
 import React, { Suspense } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 
@@ -11,7 +10,6 @@ const Dashboard = () => {
           <Header />
           <NavLink to="/home">Home</NavLink>
           <NavLink to="/statistics">Statistics</NavLink>
-          <Home />
           <Outlet />
         </Suspense>
       </main>
