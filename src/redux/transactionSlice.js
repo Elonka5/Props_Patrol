@@ -15,25 +15,31 @@ const initialState = {
       id: '1',
       transactionDate: 'string',
       type: 'INCOME',
-      categoryId: '14548',
+      categoryId: 'string',
+      userId: 'string',
       comment: 'string',
       amount: 0,
+      balanceAfter: 0,
     },
     {
       id: '2',
       transactionDate: 'string',
       type: 'INCOME',
-      categoryId: '25454',
+      categoryId: 'string',
+      userId: 'string',
       comment: 'string',
       amount: 0,
+      balanceAfter: 0,
     },
     {
       id: '3',
       transactionDate: 'string',
       type: 'INCOME',
-      categoryId: '37897',
+      categoryId: 'string',
+      userId: 'string',
       comment: 'string',
       amount: 0,
+      balanceAfter: 0,
     },
   ],
   transactionsCategories: null,
@@ -57,7 +63,8 @@ const handleRejected = state => {
   state.isError = true;
 };
 
-const handleFulfilledDelete = (state, payload) => {
+const handleFulfilledDelete = (state, { payload }) => {
+  console.log(payload);
   state.isLoading = false;
   state.transactions = state.transactions.filter(
     transaction => transaction.id !== payload

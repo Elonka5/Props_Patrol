@@ -49,8 +49,8 @@ export const deleteTransactionThunk = createAsyncThunk(
   'transactions/deleteTransaction',
   async transactionId => {
     try {
-      const { data } = await deleteTransaction(transactionId);
-      return data;
+      await deleteTransaction(transactionId);
+      return transactionId;
     } catch (error) {
       console.error('error add new contact', error);
     }

@@ -40,7 +40,7 @@ export const updateTransaction = async ({ transactionId, transaction }) => {
 
 // Delete Transaction
 export const deleteTransaction = async transactionId => {
-  const { data } = await instance.delete(`/transactions/${transactionId}`);
+  const data = await instance.delete(`/transactions/${transactionId}`);
   return data;
 };
 
