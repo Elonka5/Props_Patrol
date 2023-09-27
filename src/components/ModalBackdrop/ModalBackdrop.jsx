@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import css from './ModalBackdrop.module.css';
+import { RxCross2 } from 'react-icons';
 
 const modalRoot = document.querySelector('#modal-root');
 
