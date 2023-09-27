@@ -1,5 +1,6 @@
 import useToggleModal from './TransactionsFormToggle';
-import Modal from '../Modal/Modal';
+// import AddTransactionForm from '../AddTransactionForm/AddTransactionForm';
+import EditTransactionForm from '../EditTransactionForm/EditTransactionForm';
 import ModalBackdrop from '../ModalBackdrop/ModalBackdrop';
 import { AiOutlinePlus } from 'react-icons/ai';
 import css from './TransactionsForm.module.css';
@@ -20,7 +21,7 @@ export const TansactionsForm = ({ item }) => {
           handleKeyDown={handleKeyDown}
           handleBackdropClick={handleBackdropClick}
         >
-          <Modal onClick={closeModal} item={item}></Modal>
+          <EditTransactionForm onClick={closeModal} item={item} />
         </ModalBackdrop>
       )}
     </div>
