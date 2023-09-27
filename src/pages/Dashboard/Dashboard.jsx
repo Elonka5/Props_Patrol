@@ -1,17 +1,18 @@
 import Header from 'components/Header/Header';
-import Home from 'pages/Home/Home';
 import React, { Suspense } from 'react';
+import { useMediaQuery } from 'react-responsive';
 import { NavLink, Outlet } from 'react-router-dom';
 
 const Dashboard = () => {
+  const isMobilesize = useMediaQuery({ query: '(max-width:767px)' });
   return (
     <div>
       <main>
+        <Header />
+        <NavLink to="/home">Home</NavLink>
+        <NavLink to="/statistics">Statistics</NavLink>
+        {isMobilesize && <NavLink to="/currency">Currency</NavLink>}
         <Suspense fallback={null}>
-          <Header />
-          <NavLink to="/home">Home</NavLink>
-          <NavLink to="/statistics">Statistics</NavLink>
-          <Home />
           <Outlet />
         </Suspense>
       </main>
