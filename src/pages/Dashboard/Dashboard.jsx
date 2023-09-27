@@ -1,7 +1,7 @@
 import Header from 'components/Header/Header';
 import React, { Suspense } from 'react';
 import { useMediaQuery } from 'react-responsive';
-import { Outlet } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 import Currency from 'pages/Currency/Currency';
 import { Navigation } from '../../components/Navigation/Navigation';
 import Balance from 'components/Balance/Balance';
