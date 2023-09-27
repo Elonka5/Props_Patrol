@@ -38,6 +38,7 @@ export const LoginForm = () => {
   };
 
   const handleSubmit = (value, { resetForm }) => {
+    console.log(value);
     dispatch(logInThunk(value))
       .unwrap()
       .then(data => {
@@ -93,9 +94,9 @@ export const LoginForm = () => {
             <FormError name="password" />
           </WrapperField>
           <WrapperButton>
-            <Link to="/home">
-              <Button type="submit" text="log in" />
-            </Link>
+            {/* <Link to="/home"> */}
+            <Button type="submit" text="log in" />
+            {/* </Link> */}
             <Link to="/register">
               <Button text="register" variant="secondary" />
             </Link>

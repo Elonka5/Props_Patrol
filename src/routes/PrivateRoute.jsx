@@ -6,7 +6,7 @@ import { selectUserIsLoggedIn, selectUserIsRefresh } from 'redux/selectors';
 const PrivateRoute = ({ children }) => {
   const userIsLogin = useSelector(selectUserIsLoggedIn);
   const userIsRefresh = useSelector(selectUserIsRefresh);
-  const shouldRedirect = !userIsLogin && !userIsRefresh;
+  const shouldRedirect = userIsLogin && !userIsRefresh;
   return shouldRedirect ? children : <Navigate to="/login" />;
 };
 
