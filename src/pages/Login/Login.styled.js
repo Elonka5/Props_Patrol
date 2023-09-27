@@ -5,6 +5,7 @@ import mobileLoginBack from 'assets/images/mobileLoginBack.png';
 export const BgImage = styled.div`
   max-width: 100vw;
   height: 100vh;
+  overflow: auto;
   display: flex;
   justify-content: center;
   align-items: center;

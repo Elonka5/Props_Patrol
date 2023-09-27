@@ -4,6 +4,7 @@ import mobileLoginBack from 'assets/images/mobileLoginBack.png';
 export const RegisterPageWrapper = styled.div`
   width: 100vw;
   height: 100vh;
+  overflow: auto;
   display: flex;
   justify-content: center;
   align-items: center;

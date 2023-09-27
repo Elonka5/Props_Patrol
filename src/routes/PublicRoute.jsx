@@ -5,7 +5,7 @@ import { selectUserIsLoggedIn } from 'redux/selectors';
 
 const PublicRoute = ({ children, redirectTo }) => {
   const userIsLogin = useSelector(selectUserIsLoggedIn);
-  return !userIsLogin ? children : <Navigate to={redirectTo} />;
+  return userIsLogin ? <Navigate to={redirectTo} /> : children;
 };
 
 export default PublicRoute;

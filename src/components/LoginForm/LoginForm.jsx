@@ -1,5 +1,4 @@
 import { Formik } from 'formik';
-import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
 
@@ -24,6 +23,7 @@ import {
   WrapperIcon3,
 } from './LoginForm.styled';
 import { logInThunk } from 'redux/authOperations';
+import { LinkStyled } from 'components/RegisterForm/RegisterForm.styled';
 
 export const LoginForm = () => {
   const { showPasswords, togglePasswordVisibility } = usePasswordToggle([
@@ -94,15 +94,11 @@ export const LoginForm = () => {
             <FormError name="password" />
           </WrapperField>
           <WrapperButton>
-            {/* <Link to="/home"> */}
             <Button type="submit" text="log in" />
-            {/* </Link> */}
-            <Link to="/register">
-              <Button text="register" variant="secondary" />
-            </Link>
           </WrapperButton>
         </FormStyled>
       </Formik>
+      <LinkStyled to="/register">Register</LinkStyled>
     </WrapperForm>
   );
 };
