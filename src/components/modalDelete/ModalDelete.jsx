@@ -9,8 +9,6 @@ const ModalDelete = ({ itemId, handleModalClose, transactions }) => {
     if (itemId) dispatch(deleteTransactionThunk(itemId));
     handleModalClose();
   };
-
-  console.log(itemId);
   return (
     <div className={style.backdrop}>
       <div className={style.modal_delete}>

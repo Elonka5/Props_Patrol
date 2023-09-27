@@ -38,6 +38,7 @@ export const LoginForm = () => {
   };
 
   const handleSubmit = (value, { resetForm }) => {
+    console.log(value);
     dispatch(logInThunk(value))
       .unwrap()
       .then(data => {
@@ -97,7 +98,6 @@ export const LoginForm = () => {
           </WrapperButton>
         </FormStyled>
       </Formik>
-
       <LinkStyled to="/register">Register</LinkStyled>
     </WrapperForm>
   );

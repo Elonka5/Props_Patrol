@@ -7,35 +7,34 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(34, 13, 91, 0.23);
-  backdrop-filter: blur(3.5px);
+  background: var(--backdrop);
   transition: opacity 500ms ease-in-out, visibility 500ms ease-in-out;
   opacity: 1;
   visibility: visible;
-  padding: 15px;
-  z-index: 1000;
+  padding: 0px;
+  backdrop-filter: blur(3.5px);
 }
 
 .modal {
-  height: 540px;
-  width: 511px;
-  padding: 41px 40px;
+  min-height: 511px;
+  width: 394px;
+  padding: 40px 73px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(#3f2e96, #5f478c);
+  background: var(--modal);
   border-radius: 8px;
   position: relative;
-  box-shadow: 0px 4px 60px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: var(--form-shadow);
 }
 
 .close_btn {
   position: absolute;
   top: 20px;
   right: 20px;
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   border: none;
   background: none;
   margin: 0;
@@ -49,17 +48,21 @@
   border: none;
 }
 
-@media only screen and (max-width: 767.9px) {
-  .backdrop {
-    padding: 0px;
-  }
+.cross_btn {
+  width: 25px;
+  height: 25px;
+  stroke: var(--white);
+  fill: var(--white);
+}
 
+@media only screen and (max-width: 767.9px) {
   .modal {
-    width: 100%;
+    max-width: 540px;
     height: 100%;
     border-radius: 0px;
     padding: calc(20 * (100vw / 480));
     min-width: 300px;
+    padding: 32px 20px;
   }
 
   .close_btn {

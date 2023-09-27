@@ -8,10 +8,10 @@
   --background: #101010;
 
   --gradient-btn: linear-gradient(
-    167deg,
-    #ffc727 0%,
-    #9e40ba 61.46%,
-    #7000ff 90.54%
+    97deg,
+    #ffc727 -16.42%,
+    #9e40ba 97.04%,
+    #7000ff 150.71%
   );
   --white-btn: #fcfcfc;
   --text-btn: #623f8b;
@@ -47,4 +47,6 @@
   --btn-shadow: 1px 9px 15px 0px rgba(0, 0, 0, 0.2);
 
   --backdrop-filter: blur(50px);
+  --backdrop: rgba(34, 13, 91, 0.23);
+  --modal: rgba(47, 21, 176, 0.95);
 }

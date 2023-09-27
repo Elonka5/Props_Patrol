@@ -2,11 +2,13 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   isModalAddTransactionOpen: false,
-  isModalLogoutOpen: false,
+  isModalLogout: false,
   isLoading: false,
   isModalEditTransactionOpen: false,
   editTransaction: null,
   isModalDeleteTransactionOpen: false,
+  isModalAddOpen: false,
+  isModalEditOpen: false,
 };
 
 const globalSlice = createSlice({
@@ -20,10 +22,10 @@ const globalSlice = createSlice({
       state.isModalAddTransactionOpen = false;
     },
     openModalLogout(state) {
-      state.isModalLogoutOpen = true;
+      state.isModalLogout = true;
     },
     closeModalLogout(state) {
-      state.isModalLogoutOpen = false;
+      state.isModalLogout = false;
     },
     setIsLoading(state) {
       state.isLoading = true;
