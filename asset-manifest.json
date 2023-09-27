@@ -1,11 +1,11 @@
 {
   "files": {
     "main.css": "/Props_Patrol/static/css/main.319cf206.css",
-    "main.js": "/Props_Patrol/static/js/main.e56b67c3.js",
+    "main.js": "/Props_Patrol/static/js/main.1daf86fc.js",
     "static/css/741.f3e80204.chunk.css": "/Props_Patrol/static/css/741.f3e80204.chunk.css",
     "static/js/741.4a0cb5e0.chunk.js": "/Props_Patrol/static/js/741.4a0cb5e0.chunk.js",
-    "static/css/806.bc8351e8.chunk.css": "/Props_Patrol/static/css/806.bc8351e8.chunk.css",
-    "static/js/806.ca6759df.chunk.js": "/Props_Patrol/static/js/806.ca6759df.chunk.js",
+    "static/css/199.4d4b4697.chunk.css": "/Props_Patrol/static/css/199.4d4b4697.chunk.css",
+    "static/js/199.817219c5.chunk.js": "/Props_Patrol/static/js/199.817219c5.chunk.js",
     "static/css/155.713f9809.chunk.css": "/Props_Patrol/static/css/155.713f9809.chunk.css",
     "static/js/155.853f3c7f.chunk.js": "/Props_Patrol/static/js/155.853f3c7f.chunk.js",
     "static/css/192.713f9809.chunk.css": "/Props_Patrol/static/css/192.713f9809.chunk.css",
@@ -21,11 +21,11 @@
     "index.html": "/Props_Patrol/index.html",
     "static/media/moneyGuardLogo.svg": "/Props_Patrol/static/media/moneyGuardLogo.dbc52635efdf8219ee1a2f3c5f17f1d2.svg",
     "main.319cf206.css.map": "/Props_Patrol/static/css/main.319cf206.css.map",
-    "main.e56b67c3.js.map": "/Props_Patrol/static/js/main.e56b67c3.js.map",
+    "main.1daf86fc.js.map": "/Props_Patrol/static/js/main.1daf86fc.js.map",
     "741.f3e80204.chunk.css.map": "/Props_Patrol/static/css/741.f3e80204.chunk.css.map",
     "741.4a0cb5e0.chunk.js.map": "/Props_Patrol/static/js/741.4a0cb5e0.chunk.js.map",
-    "806.bc8351e8.chunk.css.map": "/Props_Patrol/static/css/806.bc8351e8.chunk.css.map",
-    "806.ca6759df.chunk.js.map": "/Props_Patrol/static/js/806.ca6759df.chunk.js.map",
+    "199.4d4b4697.chunk.css.map": "/Props_Patrol/static/css/199.4d4b4697.chunk.css.map",
+    "199.817219c5.chunk.js.map": "/Props_Patrol/static/js/199.817219c5.chunk.js.map",
     "155.713f9809.chunk.css.map": "/Props_Patrol/static/css/155.713f9809.chunk.css.map",
     "155.853f3c7f.chunk.js.map": "/Props_Patrol/static/js/155.853f3c7f.chunk.js.map",
     "192.713f9809.chunk.css.map": "/Props_Patrol/static/css/192.713f9809.chunk.css.map",
@@ -38,6 +38,6 @@
   },
   "entrypoints": [
     "static/css/main.319cf206.css",
-    "static/js/main.e56b67c3.js"
+    "static/js/main.1daf86fc.js"
   ]
 }
