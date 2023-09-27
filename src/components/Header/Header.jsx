@@ -10,6 +10,7 @@ import moneyLogo from 'assets/images/moneyGuardLogo.svg';
 
 const Header = () => {
   const isModalShow = useSelector(selectIsModalLogOut);
+  console.log(isModalShow);
   const isMobilesize = useMediaQuery({ query: '(max-width:767px)' });
   const dispatch = useDispatch();
 
