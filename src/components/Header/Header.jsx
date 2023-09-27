@@ -28,14 +28,21 @@ const Header = () => {
           />
           <p className={styledheader.header_text}>Money Guard</p>
         </div>
-        <div>
-          <span className={styledheader.user_name_header}></span>
+        <div className={styledheader.wrap_btn}>
+          <span className={styledheader.user_name_header}>Name</span>
           <button onClick={handleLogout} className={styledheader.header_btn}>
             <IoExitOutline className={styledheader.header_svg} />
             {isMobilesize ? '' : 'Exit'}
           </button>
         </div>
       </header>
+      {/* <ModalLogout /> */}
+
+      {/* {isModalShow && (
+        <ModalBackLog closeReducer={closeModalLogout}>
+          <ModalLogout />
+        </ModalBackLog>
+      )} */}
       {isModalShow && (
         <ModalLogout closeReducer={() => dispatch(closeModalLogout())} />
       )}
