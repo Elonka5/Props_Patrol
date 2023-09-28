@@ -1,17 +1,42 @@
-import { useSelector } from 'react-redux';
+import React from 'react';
 import css from './Balance.module.css';
-import { selectBalanse } from 'redux/auth/authSelector';
+import { useSelector } from 'react-redux';
 
-const Balance = () => {
-  const balanse = useSelector(selectBalanse);
+export function formatMoney(num) {
+  const arr = Number(num)
+    .toLocaleString('en', {
+      useGrouping: true,
+    })
+    .replace(',', ' ')
+    .split(' ');
+  if (arr[arr.length - 1].includes('.')) {
+    if (arr[arr.length - 1].length > 6) {
+      arr[arr.length - 1] = arr[arr.length - 1].slice(0, 6);
+      return arr.join(' ');
+    }
+    if (arr[arr.length - 1].length === 6) {
+      return arr.join(' ');
+    }
+    if (arr[arr.length - 1].length === 5) {
+      arr[arr.length - 1] = arr[arr.length - 1] + '0';
+      return arr.join(' ');
+    }
+  }
+  arr[arr.length - 1] = arr[arr.length - 1] + '.00';
+  return arr.join(' ');
+}
+
+export const Balance = () => {
+  const balance = useSelector(state => state.auth.user.balance);
+
   return (
-    <div className={css.Balance}>
-      Your balance
-      <div className={css.Money}>
-        <span className={css.total}>{`₴ ${balanse}`}</span>
+    <>
+      <div className={css.balanceBox}>
+        <p className={css.balanceTitle}>Your balance</p>
+        <p className={css.balance}>
+          <span className={css.uah}>&#8372;</span> {formatMoney(balance)}
+        </p>
       </div>
-    </div>
+    </>
   );
 };
-
-export default Balance;
