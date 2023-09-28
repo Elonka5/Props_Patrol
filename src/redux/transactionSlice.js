@@ -11,7 +11,7 @@ import {
 
 const initialState = {
   transactions: [],
-  transactionsCategories: null,
+  transactionsCategories: [],
   currencyRates: [],
   transactionSummary: [],
   isLoading: false,
@@ -22,9 +22,10 @@ const handlePending = state => {
   state.isLoading = true;
 };
 
-const handleFulfilled = (state, { payload }) => {
+const handleFulfilled = (state, action) => {
   state.isLoading = false;
-  state.transactions.push(payload);
+  state.isLoading = false;
+  state.transactions.push(action.meta.arg);
 };
 
 const handleRejected = state => {

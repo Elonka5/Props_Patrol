@@ -25,7 +25,7 @@ export const getTransactionsThunk = createAsyncThunk(
   'transactions/getTransactions',
   async () => {
     try {
-      const { data } = await getTransaction();
+      const data = await getTransaction();
       return data;
     } catch (error) {
       console.error('error add new contact', error);
@@ -61,7 +61,7 @@ export const fetchCategoriesThunk = createAsyncThunk(
   'transactions/fetchCategoriesTransaction',
   async () => {
     try {
-      const { data } = await fetchCategories();
+      const data = await fetchCategories();
       return data;
     } catch (error) {
       console.error('error add new contact', error);

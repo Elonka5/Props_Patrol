@@ -19,7 +19,7 @@ export const fetchCurrentUser = async () => {
 
 // Create new transaction for logged in user
 export const addNewTransaction = async transaction => {
-  const { data } = await instance.post('/transactions', transaction);
+  const data = await instance.post('/transactions', transaction);
   return data;
 };
 
