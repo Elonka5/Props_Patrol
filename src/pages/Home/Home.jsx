@@ -1,9 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import style from './HomePage.module.css';
 import TransactionList from 'components/TransactionList/TransactionList';
 import { TansactionsForm } from 'components/TransactionForm/TransactionsForm';
+import {
+  fetchCategoriesThunk,
+  getTransactionsThunk,
+} from 'redux/transactionsOperations';
+import { useDispatch } from 'react-redux';
 
 const Home = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchCategoriesThunk());
+  }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(getTransactionsThunk());
+  }, [dispatch]);
+
   return (
     <section className={style.home_section}>
       <div className={style.transaction_main_wrapper}>
