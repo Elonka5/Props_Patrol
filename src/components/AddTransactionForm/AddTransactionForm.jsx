@@ -21,7 +21,7 @@ export default function Modal({ onClick = () => {} }) {
     type: 'EXPENSE',
     categoryId: '',
     comment: '',
-    amount: 0,
+    amount: amount,
   });
 
   const handleChangeDate = date => {
