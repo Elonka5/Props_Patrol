@@ -10,38 +10,7 @@ import {
 } from './transactionsOperations';
 
 const initialState = {
-  transactions: [
-    {
-      id: '1',
-      transactionDate: 'string',
-      type: 'INCOME',
-      categoryId: 'string',
-      userId: 'string',
-      comment: 'string',
-      amount: 0,
-      balanceAfter: 0,
-    },
-    {
-      id: '2',
-      transactionDate: 'string',
-      type: 'INCOME',
-      categoryId: 'string',
-      userId: 'string',
-      comment: 'string',
-      amount: 0,
-      balanceAfter: 0,
-    },
-    {
-      id: '3',
-      transactionDate: 'string',
-      type: 'INCOME',
-      categoryId: 'string',
-      userId: 'string',
-      comment: 'string',
-      amount: 0,
-      balanceAfter: 0,
-    },
-  ],
+  transactions: [],
   transactionsCategories: null,
   currencyRates: [],
   transactionSummary: [],
@@ -63,6 +32,12 @@ const handleRejected = state => {
   state.isError = true;
 };
 
+const handleFulfilledGet = (state, { payload }) => {
+  state.isLoading = false;
+
+  state.transactions = payload;
+};
+
 const handleFulfilledDelete = (state, { payload }) => {
   console.log(payload);
   state.isLoading = false;
@@ -70,6 +45,19 @@ const handleFulfilledDelete = (state, { payload }) => {
     transaction => transaction.id !== payload
   );
 };
+
+const handleFulfilledUpdate = (state, { payload }) => {
+  state.isLoading = false;
+  state.error = null;
+  const updatedItem = payload;
+  const index = state.transactions.findIndex(
+    item => item._id === updatedItem._id
+  );
+  if (index !== -1) {
+    state.transactions[index] = updatedItem;
+  }
+};
+
 const handleFulfilledCategories = (state, { payload }) => {
   state.isLoading = false;
   state.transactionsCategories = payload;
@@ -84,6 +72,7 @@ const handleFulfilledCurrencyRates = (state, { payload }) => {
   state.isLoading = false;
   state.currencyRates.push(payload);
 };
+
 const transactionSlice = createSlice({
   name: 'transactions',
   initialState,
@@ -93,10 +82,10 @@ const transactionSlice = createSlice({
       .addCase(addNewTransactionThunk.fulfilled, handleFulfilled)
       .addCase(addNewTransactionThunk.rejected, handleRejected)
       .addCase(getTransactionsThunk.pending, handlePending)
-      .addCase(getTransactionsThunk.fulfilled, handleFulfilled)
+      .addCase(getTransactionsThunk.fulfilled, handleFulfilledGet)
       .addCase(getTransactionsThunk.rejected, handleRejected)
       .addCase(updateTransactionThunk.pending, handlePending)
-      .addCase(updateTransactionThunk.fulfilled, handleFulfilled)
+      .addCase(updateTransactionThunk.fulfilled, handleFulfilledUpdate)
       .addCase(updateTransactionThunk.rejected, handleRejected)
       .addCase(deleteTransactionThunk.pending, handlePending)
       .addCase(deleteTransactionThunk.fulfilled, handleFulfilledDelete)
